@@ -1,0 +1,43 @@
+<h1>Password Generator1</h1>
+
+<div>
+  <label for="">Enter Length:</label>
+  <input #userInput type="text" (input)="onChangeLength(userInput.value)" />
+</div>
+
+<div>
+  <label> Use Letters </label>
+
+  <input type="checkbox" (change)="onChangeUseLetters()" />
+</div>
+
+<div>
+  <label> Use Numbers </label>
+
+  <input type="checkbox" (change)="onChangeUseNumbers()" />
+</div>
+
+<div>
+  <label> Use Sybmols </label>
+
+  <input type="checkbox" (change)="onChangeUseSymbols()" />
+</div>
+
+<div>
+  <button
+    [disabled]="
+      !(length && (includeNumbers || includeLetters || includeSymbols))
+    "
+    (click)="onButtonClicked(userInput.value)"
+  >
+    Generate!
+  </button>
+  <!-- <h3 class="error" *ngIf="isActive">{{ error }}</h3> -->
+</div>
+
+<div>
+  <label>Your Password</label>
+  <input type="text" [value]="password" />
+</div>
+
+<h1>Your Generated Passowrd is : {{ password }}</h1>
