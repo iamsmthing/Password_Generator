@@ -1,67 +1,73 @@
-<h1 class="text-center text-primary">Password Generator</h1>
+<h1 class="text-center text-primary" id="header">
+  Password Generator
+</h1>
 
-<div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">Enter Length:</span>
-  <input
-    #userInput
-    type="text"
-    class="form-control"
-    placeholder="Enter the Length"
-    aria-label="Username"
-    aria-describedby="basic-addon1"
-    (input)="onChangeLength(userInput.value)"
-  />
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-text">
-    <label for="">Use Letters :</label>
+<div class="box text-white main-box">
+  <div class="input-group mb-3 box-input">
+    <span class="input-group-text box-input" id="basic-addon1"
+      >Enter Length:</span
+    >
     <input
-      class="form-check-input mt-0 bg-primary"
-      type="checkbox"
-      value=""
-      (change)="onChangeUseLetters()"
+      #userInput
+      type="text"
+      class="form-control"
+      placeholder="Enter the Length"
+      aria-label="Username"
+      aria-describedby="basic-addon1"
+      (input)="onChangeLength(userInput.value)"
     />
   </div>
-</div>
 
-<div class="input-group mb-3">
-  <div class="input-group-text">
-    <label for="">Use Numbers :</label>
-    <input
-      class="form-check-input mt-0 bg-primary"
-      type="checkbox"
-      value=""
-      (change)="onChangeUseNumbers()"
-    />
+  <div class="input-group mb-3">
+    <div class="input-group-text box-input">
+      <input
+        class="form-check-input mt-0 bg-primary"
+        type="checkbox"
+        value=""
+        (change)="onChangeUseLetters()"
+      />
+      <label for=""> &nbsp;Use Letters</label>
+    </div>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-text box-input">
+      <input
+        class="form-check-input mt-0 bg-primary"
+        type="checkbox"
+        value=""
+        (change)="onChangeUseNumbers()"
+      />
+      <label for="">&nbsp;Use Numbers</label>
+    </div>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-text box-input">
+      <input
+        class="form-check-input mt-0 bg-primary"
+        type="checkbox"
+        value=""
+        (change)="onChangeUseSymbols()"
+      />
+      <label for="">&nbsp;Use Symbols</label>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button
+      class="btn btn-primary"
+      [disabled]="
+        !(length && (includeNumbers || includeLetters || includeSymbols))
+      "
+      (click)="onButtonClicked(userInput.value)"
+    >
+      Generate Password!
+    </button>
+    <!-- <h3 class="error" *ngIf="isActive">{{ error }}</h3> -->
+
+    <h3 text-center text-primary>
+      Your Generated Password is : <span id="password">{{ password }}</span>
+    </h3>
   </div>
 </div>
-
-<div class="input-group mb-3">
-  <div class="input-group-text">
-    <label for="">Use Symbols :</label>
-    <input
-      class="form-check-input mt-0 bg-primary"
-      type="checkbox"
-      value=""
-      (change)="onChangeUseSymbols()"
-    />
-  </div>
-</div>
-
-<div class="text-center">
-  <button
-    class="btn btn-primary"
-    [disabled]="
-      !(length && (includeNumbers || includeLetters || includeSymbols))
-    "
-    (click)="onButtonClicked(userInput.value)"
-  >
-    Generate!
-  </button>
-  <!-- <h3 class="error" *ngIf="isActive">{{ error }}</h3> -->
-</div>
-
-
-
-<h1>Your Generated Passowrd is : {{ password }}</h1>

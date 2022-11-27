@@ -1,7 +1,38 @@
+#header {
+  margin-bottom: 2rem;
+}
+
 p {
   font-family: Lato;
 }
 
 .error {
   color: red;
+}
+.box {
+  margin: 0 auto;
+  padding: 10px;
+
+  color: black;
+  width: 60%;
+  height: 60%;
+  border-radius: 10px;
+  background-color: #212529;
+  box-shadow: 10px 10px #525455;
+}
+input {
+  background-color: transparent;
+  color: white;
+}
+input:focus {
+  color: white;
+  background-color: #212529;
+}
+.box-input {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+#password {
+  color: #42a500;
 }
