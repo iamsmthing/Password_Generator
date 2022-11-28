@@ -1,6 +1,4 @@
-<h1 class="text-center text-primary" id="header">
-  Password Generator
-</h1>
+<h1 class="text-center text-primary" id="header">Password Generator</h1>
 
 <div class="box text-white main-box">
   <div class="input-group mb-3 box-input">
@@ -66,7 +64,7 @@
     </button>
     <!-- <h3 class="error" *ngIf="isActive">{{ error }}</h3> -->
 
-    <h3 text-center text-primary>
+    <h3 text-center text-primary *ngIf="password">
       Your Generated Password is : <span id="password">{{ password }}</span>
     </h3>
   </div>
